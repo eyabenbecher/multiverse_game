@@ -19,6 +19,7 @@ public class MoveCameraOnClick : MonoBehaviour, IPointerClickHandler
     public GameObject uiElement2;
     public GameObject uiElement3;
     public GameObject uiElement4;
+    
 
 
 
