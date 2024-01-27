@@ -16,7 +16,7 @@ public class GridBuildingSystem : MonoBehaviour
         float cellSize = 10f;
 
         // Set the desired position for the grid
-        Vector3 gridPosition = new Vector3(633.667664f, 34f, 1002f);
+        Vector3 gridPosition = new Vector3(896f, 12f, 1086f);
 
         grid = new GridXZ<GridObject>(gridWidth, gridHeight, cellSize, gridPosition, (GridXZ<GridObject> g, int x, int z) => new GridObject(g, x, z));
         placedObjectTypeSO = placedObjectTypeList[0];
@@ -42,10 +42,7 @@ public class GridBuildingSystem : MonoBehaviour
             this.transform = transform;
         }
 
-        public bool CanBuild()
-        {
-            return transform == null;
-        }
+        
 
         public void ClearTransform()
         {
@@ -61,22 +58,16 @@ public class GridBuildingSystem : MonoBehaviour
             grid.GetXZ(Mouse3D.GetMouseWorldPosition(), out int x, out int z);
 
             GridObject gridObject = grid.GetGridObject(x, z);
-            if (gridObject.CanBuild())
-            {
+           
                 // Instantiate the prefab and rotate it by -180 degrees around the y-axis
                 Transform buildTransform = Instantiate(placedObjectTypeSO.prefab, grid.GetWorldPosition(x, z), Quaternion.Euler(0f, -180f, 0f));
 
                 // Set the transform in the grid object
-                gridObject.SetTransform(buildTransform);
-
+               
                 // Reset the buttonClicked flag
                 buttonClicked = false;
 
-            }
-            else
-            {
-                Debug.Log("Cannot build here");
-            }
+           
         }
     }
 

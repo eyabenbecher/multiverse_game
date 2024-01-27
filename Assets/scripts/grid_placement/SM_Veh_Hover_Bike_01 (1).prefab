@@ -264,6 +264,11 @@ GameObject:
   - component: {fileID: 6531164355823974898}
   - component: {fileID: 3454652951334648295}
   - component: {fileID: -4075550069464036593}
+  - component: {fileID: 3791585012295140442}
+  - component: {fileID: 6198649416840156291}
+  - component: {fileID: -7304077202908069248}
+  - component: {fileID: 4366540087564196079}
+  - component: {fileID: 1429409471060675793}
   m_Layer: 0
   m_Name: SM_Veh_Hover_Bike_01 (1)
   m_TagString: Untagged
@@ -426,3 +431,97 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3791585012295140442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700517499501367905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbaacb6e2d7a74d4b933708c4099b320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  target: {fileID: 1272587502878379069, guid: 4884d64c547880a468b8fe598712e04b, type: 3}
+  dest: {x: 0, y: 0, z: 0}
+  maxSpeed: 50
+  maxAccel: 50
+  maxRotation: 5
+  maxAngularAccel: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  avoidRadius: 5
+  avoidWeight: 5
+--- !u!114 &6198649416840156291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700517499501367905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3014436eb106ac46a97510e6cb937ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7304077202908069248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700517499501367905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbdc57dadb49924bb83fa6d620c5852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  seek: {fileID: 6198649416840156291}
+  seekScript: {fileID: 3791585012295140442}
+  agentScript: {fileID: 4366540087564196079}
+  maxSpeed: 50
+  target: {fileID: 1272587502878379069, guid: 4884d64c547880a468b8fe598712e04b, type: 3}
+  state: 0
+--- !u!114 &4366540087564196079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700517499501367905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b14845731edbb4da0cd8ebc1a17c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 50
+  trueMaxSpeed: 0
+  maxAccel: 30
+  orientation: 180
+  rotation: 0
+  velocity: {x: 0, y: 0, z: 0}
+  maxRotation: 45
+  maxAngularAccel: 45
+--- !u!114 &1429409471060675793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700517499501367905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5154c09798a50045b6b9745c99f090b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  target: {fileID: 6700517499501367905}
+  dest: {x: 0, y: 0, z: 0}
+  maxSpeed: 50
+  maxAccel: 50
+  maxRotation: 5
+  maxAngularAccel: 5

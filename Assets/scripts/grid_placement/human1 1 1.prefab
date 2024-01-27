@@ -1798,7 +1798,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8018304315308463550}
   - component: {fileID: 5605578184543516595}
-  - component: {fileID: 6713754857368840390}
+  - component: {fileID: 5847514270909840590}
+  - component: {fileID: -3038390941856154336}
+  - component: {fileID: 8108266497026363540}
+  - component: {fileID: -4570627747547808557}
+  - component: {fileID: -489977159017327142}
   m_Layer: 0
   m_Name: human1 1 1
   m_TagString: Untagged
@@ -1867,28 +1871,100 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!195 &6713754857368840390
-NavMeshAgent:
+--- !u!114 &5847514270909840590
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3425981752827767998}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b14845731edbb4da0cd8ebc1a17c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 50
+  trueMaxSpeed: 0
+  maxAccel: 30
+  orientation: 180
+  rotation: 0
+  velocity: {x: 0, y: 0, z: 0}
+  maxRotation: 180
+  maxAngularAccel: 45
+--- !u!114 &-3038390941856154336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425981752827767998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5154c09798a50045b6b9745c99f090b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  target: {fileID: 1272587502878379069, guid: 4884d64c547880a468b8fe598712e04b, type: 3}
+  dest: {x: 0, y: 0, z: 0}
+  maxSpeed: 50
+  maxAccel: 50
+  maxRotation: 180
+  maxAngularAccel: 5
+--- !u!114 &8108266497026363540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425981752827767998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbdc57dadb49924bb83fa6d620c5852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  team: 0
+  seek: {fileID: 0}
+  seekScript: {fileID: 0}
+  agentScript: {fileID: 0}
+  maxSpeed: 50
+  target: {fileID: 1272587502878379069, guid: 4884d64c547880a468b8fe598712e04b, type: 3}
+  state: 0
+--- !u!114 &-4570627747547808557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425981752827767998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbaacb6e2d7a74d4b933708c4099b320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weight: 1
+  target: {fileID: 1272587502878379069, guid: 4884d64c547880a468b8fe598712e04b, type: 3}
+  dest: {x: 0, y: 0, z: 0}
+  maxSpeed: 50
+  maxAccel: 50
+  maxRotation: 5
+  maxAngularAccel: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  avoidRadius: 5
+  avoidWeight: 5
+--- !u!114 &-489977159017327142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425981752827767998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3014436eb106ac46a97510e6cb937ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3777401400908024654
 GameObject:
   m_ObjectHideFlags: 0
