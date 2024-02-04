@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class steering : MonoBehaviour
 {
-    public float angular; //rotation 0->360
-    public Vector3 linear; //instantaneous velocity
+    public float angular; 
+    public Vector3 linear; 
     public steering()
     {
         angular = 0.0f;

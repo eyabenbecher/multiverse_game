@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: human1
   m_EditorClassIdentifier: 
   nameString: human
-  prefab: {fileID: 8018304315308463550, guid: ff022a20750ab0846b95dbb44af2308e, type: 3}
+  prefab: {fileID: 1919932925296509875, guid: c6020f4a00d9c594c9f01dcec157c4a3, type: 3}
   width: 1
   height: 1
