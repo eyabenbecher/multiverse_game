@@ -1,25 +1,30 @@
-using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
-public class inventorySystem : MonoBehaviour
+public class InventorySystem : MonoBehaviour
 {
-    public static inventorySystem current;
+    public static InventorySystem current;
 
     private Dictionary<InventoryItemData, InventoryItem> m_itemDictionary;
     public List<InventoryItem> inventory { get; private set; }
-    // Start is called before the first frame update
+    public event Action onInventoryChangedEvent;
 
-
-    private void Awake()
+    public void Awake()
     {
-        Debug.Log("Inventory System Awake");
         current = this;
         inventory = new List<InventoryItem>();
         m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
     }
+
+    //public InventoryItem Get(InventoryItemData referenceData)
+    //{
+    //    if(m_itemDictionary.TryGetValue(referenceData, out InventoryItem item))
+    //    {
+    //        return item;
+    //    }
+    //    return null;
+    //}
 
     public void Add(InventoryItemData referenceData)
     {
@@ -33,6 +38,7 @@ public class inventorySystem : MonoBehaviour
             inventory.Add(newItem);
             m_itemDictionary.Add(referenceData, newItem);
         }
+        onInventoryChangedEvent?.Invoke();
     }
 
     public void Remove(InventoryItemData referenceData)
@@ -46,6 +52,7 @@ public class inventorySystem : MonoBehaviour
                 m_itemDictionary.Remove(referenceData);
             }
         }
+        onInventoryChangedEvent?.Invoke();
 
     }
 

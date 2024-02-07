@@ -1,17 +1,16 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+public class ItemObject : MonoBehaviour
+{
+    public InventoryItemData referenceItem;
 
-//public class ItemObject : MonoBehaviour
-//{
-//    public InventoryItem referenceItem;
-
-//    public void OnHandlePickUpItem()
-//    {
-//        inventorySystem.current.Add(referenceItem);
-//        Destroy(gameObject);
-//        Debug.Log("Inventory System: " + (inventorySystem.current != null));
-//    }
+    public void OnHandlePickUpItem()
+    {
+        InventorySystem.current.Add(referenceItem);
+        Destroy(gameObject);
+        Debug.Log("Inventory System: " + (InventorySystem.current != null));
+    }
 
 
-//}
+}
