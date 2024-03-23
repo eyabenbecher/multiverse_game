@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,21 +11,25 @@ public class InventorySystem : MonoBehaviour
     public List<InventoryItem> inventory { get; private set; }
     public event Action onInventoryChangedEvent;
 
-    public void Awake()
+
+
+
+
+    private void Awake()
     {
         current = this;
         inventory = new List<InventoryItem>();
         m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
     }
 
-    //public InventoryItem Get(InventoryItemData referenceData)
-    //{
-    //    if(m_itemDictionary.TryGetValue(referenceData, out InventoryItem item))
-    //    {
-    //        return item;
-    //    }
-    //    return null;
-    //}
+    public InventoryItem Get(InventoryItemData referenceData)
+    {
+        if (m_itemDictionary.TryGetValue(referenceData, out InventoryItem item))
+        {
+            return item;
+        }
+        return null;
+    }
 
     public void Add(InventoryItemData referenceData)
     {
@@ -38,7 +43,7 @@ public class InventorySystem : MonoBehaviour
             inventory.Add(newItem);
             m_itemDictionary.Add(referenceData, newItem);
         }
-        onInventoryChangedEvent?.Invoke();
+        //onInventoryChangedEvent?.Invoke();
     }
 
     public void Remove(InventoryItemData referenceData)
@@ -52,7 +57,7 @@ public class InventorySystem : MonoBehaviour
                 m_itemDictionary.Remove(referenceData);
             }
         }
-        onInventoryChangedEvent?.Invoke();
+        //onInventoryChangedEvent?.Invoke();
 
     }
 
@@ -81,5 +86,94 @@ public class InventorySystem : MonoBehaviour
 
     }
 
-    
+
 }
+
+
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+
+//public class InventorySystem : MonoBehaviour
+//{
+//    public static InventorySystem current;
+
+//    private Dictionary<InventoryItemData, InventoryItem> m_itemDictionary;
+//    public List<InventoryItem> Inventory;
+//    public event Action onInventoryChangedEvent;
+
+//    private void Awake()
+//    {
+//        current = this;
+//        Inventory = new List<InventoryItem>();
+//        m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
+//    }
+
+//    public InventoryItem Get(InventoryItemData referenceData)
+//    {
+//        if (m_itemDictionary.TryGetValue(referenceData, out InventoryItem item))
+//        {
+//            return item;
+//        }
+//        return null;
+//    }
+
+//    public void Add(InventoryItemData referenceData)
+//    {
+//        if (m_itemDictionary.TryGetValue(referenceData, out InventoryItem value))
+//        {
+//            value.AddToStack();
+//        }
+//        else
+//        {
+//            InventoryItem newItem = new InventoryItem(referenceData);
+//            Inventory.Add(newItem);
+//            m_itemDictionary.Add(referenceData, newItem);
+//        }
+//        StartCoroutine(UpdateInventoryUI());
+//    }
+
+//    public void Remove(InventoryItemData referenceData)
+//    {
+//        if (m_itemDictionary.TryGetValue(referenceData, out InventoryItem value))
+//        {
+//            value.RemoveFromStack();
+//            if (value.stackSize == 0)
+//            {
+//                Inventory.Remove(value);
+//                m_itemDictionary.Remove(referenceData);
+//            }
+//        }
+//        StartCoroutine(UpdateInventoryUI());
+//    }
+
+//    IEnumerator UpdateInventoryUI()
+//    {
+//        yield return null; // Wait for one frame to ensure UI updates correctly
+//        onInventoryChangedEvent?.Invoke();
+//    }
+
+//    [Serializable]
+//    public class InventoryItem
+//    {
+//        public InventoryItemData data;
+//        public int stackSize;
+
+//        public InventoryItem(InventoryItemData source)
+//        {
+//            data = source;
+//            AddToStack();
+//        }
+
+//        public void AddToStack()
+//        {
+//            stackSize++;
+//        }
+
+//        public void RemoveFromStack()
+//        {
+//            stackSize--;
+//        }
+//    }
+//}

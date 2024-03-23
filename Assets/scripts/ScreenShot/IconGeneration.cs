@@ -169,18 +169,3 @@ public class TakeScreenshot : MonoBehaviour
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

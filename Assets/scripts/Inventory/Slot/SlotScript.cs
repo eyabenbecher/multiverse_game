@@ -7,7 +7,7 @@ using static InventorySystem;
 
 public class SlotScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     [SerializeField]
     private Image m_icon;
 
