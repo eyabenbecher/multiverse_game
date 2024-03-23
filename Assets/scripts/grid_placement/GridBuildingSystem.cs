@@ -52,19 +52,15 @@ public class GridBuildingSystem : MonoBehaviour
 
     private void Update()
     {
-        // Check if a button has been clicked
+        
         if (buttonClicked && Input.GetMouseButtonDown(0))
         {
             grid.GetXZ(Mouse3D.GetMouseWorldPosition(), out int x, out int z);
 
             GridObject gridObject = grid.GetGridObject(x, z);
            
-                // Instantiate the prefab and rotate it by -180 degrees around the y-axis
+             
                 Transform buildTransform = Instantiate(placedObjectTypeSO.prefab, grid.GetWorldPosition(x, z), Quaternion.Euler(0f, -180f, 0f));
-
-                // Set the transform in the grid object
-               
-                // Reset the buttonClicked flag
                 buttonClicked = false;
 
            

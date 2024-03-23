@@ -21,9 +21,7 @@ public class seek_script : MonoBehaviour
             bb.seekScript.weight = 1.0f;
             bb.seekScript.enabled = true;
 
-            //bb.fleeScript = gameObject.AddComponent<Flee>();
-            //bb.fleeScript.target = target;
-            //bb.fleeScript.enabled = true;
+           
         }
 
     }

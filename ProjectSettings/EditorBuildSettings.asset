@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/PolygonSciFiWorlds/Scenes/Demo_Corporation_01.unity
     guid: 9169aeaec4c4d1b48951dbbba34a7239
   - enabled: 1
-    path: Assets/PolygonSciFiWorlds/Scenes/Demo_Scavenger_01.unity
+    path: Assets/PolygonSciFiWorlds/Scenes/venuscopie.unity
     guid: dcdd1142cd62aa547b6418c7fd91272a
   - enabled: 1
-    path: Assets/PolygonSciFiWorlds/Scenes/Demo_Explorer_01.unity
+    path: Assets/PolygonSciFiWorlds/Scenes/marscopie.unity
     guid: 8fbc165d579552144af32511c7e676e7
   - enabled: 1
     path: Assets/PolygonSciFiWorlds/Scenes/main.unity
