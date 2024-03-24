@@ -7,6 +7,7 @@ public class GridBuildingSystem : MonoBehaviour
     [SerializeField] private List<PlacedObjectTypeSO> placedObjectTypeList;
     private PlacedObjectTypeSO placedObjectTypeSO;
     private GridXZ<GridObject> grid;
+    
     private bool buttonClicked = false;
 
     private void Awake()
