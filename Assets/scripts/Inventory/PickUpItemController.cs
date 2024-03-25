@@ -24,6 +24,7 @@ public class PickUpItemController : MonoBehaviour
                 if (item != null)
                 {
                     item.OnHandlePickUpItem();
+                    //PickUpItemController.Pickup((
                 }
             }
         }

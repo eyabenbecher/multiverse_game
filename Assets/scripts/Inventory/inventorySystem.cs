@@ -15,7 +15,7 @@ public class InventorySystem : MonoBehaviour
 
 
 
-    private void Awake()
+    public void Awake()
     {
         current = this;
         inventory = new List<InventoryItem>();
